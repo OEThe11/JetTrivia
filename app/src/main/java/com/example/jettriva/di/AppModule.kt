@@ -1,6 +1,7 @@
 package com.example.jettriva.di
 
 import com.example.jettriva.network.QuestionApi
+import com.example.jettriva.repository.QuestionRepository
 import com.example.jettriva.util.Constants.BASE_URL
 import dagger.Module
 import dagger.Provides
@@ -14,6 +15,13 @@ import javax.inject.Singleton
 @Module
 @InstallIn(SingletonComponent::class)
 object AppModule {
+
+
+
+    @Singleton
+    @Provides
+    fun provideQuestionRepository(api: QuestionApi) = QuestionRepository(api)
+
     @Singleton
     @Provides
     fun provideQuestionApi(): QuestionApi{
