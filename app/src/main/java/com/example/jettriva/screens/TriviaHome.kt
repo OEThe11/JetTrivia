@@ -8,5 +8,4 @@ import com.example.jettriva.component.Questions
 @Composable
 fun TriviaHome( viewModel: QuestionsViewModel = hiltViewModel()){
     Questions(viewModel)
-    QuestionDisplay()
 }
